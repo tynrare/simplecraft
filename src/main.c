@@ -1,5 +1,5 @@
 #include "app.h"
-// agent: codex | 2026-09-06 | restore runtime host scaffold | c38f53
+// agent: codex | 2026-09-06 | keep web frame callback synchronous | 3c3e50
 #include <raylib.h>
 #if defined(PLATFORM_WEB)
 #include <emscripten/emscripten.h>
@@ -35,7 +35,9 @@ static void equilizer(void) {
 static void step(void) {
   equilizer();
   app_inputs();
+#if !defined(PLATFORM_WEB)
   if (WindowShouldClose()) return;
+#endif
   BeginDrawing();
   app_draw();
   EndDrawing();

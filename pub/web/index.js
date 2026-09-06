@@ -71,7 +71,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmp0x7w1rgi.js
+// include: /tmp/tmpprwzlsw3.js
 
   if (!Module['expectedDataFileDownloads']) Module['expectedDataFileDownloads'] = 0;
   Module['expectedDataFileDownloads']++;
@@ -204,21 +204,21 @@ Module['FS_createPath']("/", "res", true, true);
 
   })();
 
-// end include: /tmp/tmp0x7w1rgi.js
-// include: /tmp/tmpylf1nonn.js
+// end include: /tmp/tmpprwzlsw3.js
+// include: /tmp/tmp_1wfm177.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmpylf1nonn.js
-// include: /tmp/tmpgh9v7iyx.js
+  // end include: /tmp/tmp_1wfm177.js
+// include: /tmp/tmpdrtm9qml.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmpgh9v7iyx.js
+  // end include: /tmp/tmpdrtm9qml.js
 
 
 var arguments_ = [];
@@ -8470,9 +8470,6 @@ async function createWasm() {
   
   var _emscripten_set_window_title = (title) => document.title = UTF8ToString(title);
 
-  var _emscripten_sleep = (ms) => Asyncify.handleSleep((wakeUp) => safeSetTimeout(wakeUp, ms));
-  _emscripten_sleep.isAsync = true;
-
 
   function _fd_close(fd) {
   try {
@@ -11686,8 +11683,6 @@ var wasmImports = {
   emscripten_set_visibilitychange_callback_on_thread: _emscripten_set_visibilitychange_callback_on_thread,
   /** @export */
   emscripten_set_window_title: _emscripten_set_window_title,
-  /** @export */
-  emscripten_sleep: _emscripten_sleep,
   /** @export */
   exit: _exit,
   /** @export */
