@@ -1,7 +1,46 @@
 <!doctype html>
-<!-- agent: codex | 2026-09-06 | simplecraft scaffold | 075481 -->
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>simplecraft</title></head>
-<body><canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
-<script>var Module={canvas:document.getElementById('canvas'),print:console.log,printErr:console.error};</script>
-{{{ SCRIPT }}}
-</body></html>
+<!-- agent: codex | 2026-09-06 | match mgame web shell sizing | 075481 -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>simplecraft</title>
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        overflow: hidden;
+      }
+      canvas.emscripten {
+        border: 0;
+        display: block;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+    <script type="text/javascript">
+      function main() {
+        window.dispatchEvent(new Event('resize'));
+      }
+
+      var Module = {
+        canvas: document.getElementById('canvas'),
+        print: function(text) { console.log(text); },
+        onRuntimeInitialized: function() {
+          console.log("module initialized");
+        },
+        setStatus: function(text) {
+          console.log("module status", text);
+          if (!text) {
+            main();
+          }
+        }
+      };
+    </script>
+    {{{ SCRIPT }}}
+  </body>
+</html>

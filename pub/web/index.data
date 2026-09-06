@@ -1,25 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
 <items>
-  <item name="Wood" />
-  <item name="Stone" />
-  <item name="Iron Ore" />
-  <item name="Copper Ore" />
-  <item name="Herb" />
-  <item name="Leather" />
-  <item name="Flint" />
-  <item name="Fiber" />
-  <item name="Clay" />
-  <item name="Crystal Shard" />
+  <item id="1001" name="wood" label="Wood" group="wood" />
+  <item id="1002" name="stone" label="Stone" group="stone" />
+  <item id="1003" name="iron_ore" label="Iron Ore" group="ore" />
+  <item id="1004" name="copper_ore" label="Copper Ore" group="ore" />
+  <item id="1005" name="herb" label="Herb" group="plant" />
+  <item id="1006" name="leather" label="Leather" group="hide" />
+  <item id="1007" name="flint" label="Flint" group="stone" />
+  <item id="1008" name="fiber" label="Fiber" group="fiber" />
+  <item id="1009" name="clay" label="Clay" group="stone" />
+  <item id="1010" name="crystal_shard" label="Crystal Shard" group="crystal" />
+  <item id="1011" name="plank" label="Plank" group="wood_product" />
+  <item id="1012" name="stone_brick" label="Stone Brick" group="stone_product" />
+  <item id="1013" name="iron_ingot" label="Iron Ingot" group="metal_product" />
+  <item id="1014" name="copper_ingot" label="Copper Ingot" group="metal_product" />
+  <item id="1015" name="leather_strip" label="Leather Strip" group="hide_product" />
+  <item id="1016" name="cloth" label="Cloth" group="fiber_product" />
+  <item id="1017" name="tool_handle" label="Tool Handle" group="wood_product" />
+  <item id="1018" name="iron_sword" label="Iron Sword" group="weapon" />
+  <item id="1019" name="mana_potion" label="Mana Potion" group="potion" />
+  <item id="1020" name="magic_staff" label="Magic Staff" group="weapon" />
+  <item id="1021" name="oak_wood" label="Oak Wood" group="wood" />
+  <item id="1022" name="pine_wood" label="Pine Wood" group="wood" />
+  <item id="1023" name="birch_wood" label="Birch Wood" group="wood" />
 </items>
 <stations>
-  <station name="Workbench" />
-  <station name="Anvil" />
-  <station name="Furnace" />
-  <station name="Loom" />
-  <station name="Alchemy Table" />
-  <station name="Cooking Fire" />
-  <station name="Tannery" />
-  <station name="Enchanting Table" />
+  <station id="2001" name="workbench" label="Workbench" />
+  <station id="2002" name="anvil" label="Anvil" />
+  <station id="2003" name="furnace" label="Furnace" />
+  <station id="2004" name="loom" label="Loom" />
+  <station id="2005" name="alchemy_table" label="Alchemy Table" />
+  <station id="2006" name="cooking_fire" label="Cooking Fire" />
+  <station id="2007" name="tannery" label="Tannery" />
+  <station id="2008" name="enchanting_table" label="Enchanting Table" />
 </stations>
+<recipes>
+  <recipe id="3001" name="make_plank" label="Plank">
+    <input group="wood" amount="2" />
+    <station name="workbench" />
+    <output item="plank" amount="2" />
+  </recipe>
+  <recipe id="3002" name="make_stone_brick" label="Stone Brick">
+    <input item="stone" amount="2" />
+    <station name="workbench" />
+    <output item="stone_brick" amount="2" />
+  </recipe>
+  <recipe id="3003" name="smelt_iron" label="Smelt Iron Ingot">
+    <input item="iron_ore" amount="2" />
+    <station name="furnace" />
+    <output item="iron_ingot" amount="1" />
+  </recipe>
+  <recipe id="3004" name="smelt_copper" label="Smelt Copper Ingot">
+    <input item="copper_ore" amount="2" />
+    <station name="furnace" />
+    <output item="copper_ingot" amount="1" />
+  </recipe>
+  <recipe id="3005" name="cut_leather" label="Cut Leather Strip">
+    <input item="leather" amount="1" />
+    <station name="tannery" />
+    <output item="leather_strip" amount="2" />
+  </recipe>
+  <recipe id="3006" name="weave_cloth" label="Weave Cloth">
+    <input item="fiber" amount="2" />
+    <station name="loom" />
+    <output item="cloth" amount="1" />
+  </recipe>
+  <recipe id="3007" name="make_handle" label="Tool Handle">
+    <input item="plank" amount="2" />
+    <station name="workbench" />
+    <output item="tool_handle" amount="1" />
+  </recipe>
+  <recipe id="3008" name="forge_sword" label="Forge Iron Sword">
+    <input item="iron_ingot" amount="2" />
+    <input item="tool_handle" amount="1" />
+    <station name="anvil" />
+    <output item="iron_sword" amount="1" />
+  </recipe>
+  <recipe id="3009" name="brew_mana" label="Brew Mana Potion">
+    <input item="herb" amount="2" />
+    <input item="crystal_shard" amount="1" />
+    <station name="alchemy_table" />
+    <output item="mana_potion" amount="1" />
+  </recipe>
+  <recipe id="3010" name="make_staff" label="Make Magic Staff">
+    <input item="plank" amount="2" />
+    <input item="crystal_shard" amount="1" />
+    <station name="workbench" />
+    <station name="alchemy_table" />
+    <output item="magic_staff" amount="1" />
+  </recipe>
+  <recipe id="3011" name="enchanted_sword" label="Enchant Iron Sword">
+    <input item="iron_sword" amount="1" />
+    <input item="crystal_shard" amount="2" />
+    <station name="anvil" />
+    <station name="enchanting_table" />
+    <output item="iron_sword" amount="1" />
+  </recipe>
+</recipes>
 </database>
