@@ -1,0 +1,5 @@
+build/
+pub/
+.cache/
+.codex/
+.agents/
