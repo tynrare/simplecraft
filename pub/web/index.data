@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+<items>
+  <item name="Wood" />
+  <item name="Stone" />
+  <item name="Iron Ore" />
+  <item name="Copper Ore" />
+  <item name="Herb" />
+  <item name="Leather" />
+  <item name="Flint" />
+  <item name="Fiber" />
+  <item name="Clay" />
+  <item name="Crystal Shard" />
+</items>
+<stations>
+  <station name="Workbench" />
+  <station name="Anvil" />
+  <station name="Furnace" />
+  <station name="Loom" />
+  <station name="Alchemy Table" />
+  <station name="Cooking Fire" />
+  <station name="Tannery" />
+  <station name="Enchanting Table" />
+</stations>
+</database>

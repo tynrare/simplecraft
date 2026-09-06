@@ -1,5 +1,12 @@
 build/
-pub/
 .cache/
 .codex/
 .agents/
+pub/web/CMakeCache.txt
+pub/web/CMakeFiles/
+pub/web/CPackConfig.cmake
+pub/web/CPackSourceConfig.cmake
+pub/web/Makefile
+pub/web/cmake_install.cmake
+pub/web/compile_commands.json
+pub/web/raylib/
