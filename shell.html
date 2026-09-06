@@ -21,9 +21,10 @@
     </style>
   </head>
   <body>
-    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="0" autofocus></canvas>
     <script type="text/javascript">
       function main() {
+        document.getElementById('canvas').focus();
         window.dispatchEvent(new Event('resize'));
       }
 
@@ -40,6 +41,7 @@
           }
         }
       };
+      Module.canvas.addEventListener('mousedown', function() { Module.canvas.focus(); });
     </script>
     {{{ SCRIPT }}}
   </body>

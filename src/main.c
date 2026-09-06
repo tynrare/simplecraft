@@ -33,6 +33,7 @@ static void equilizer(void) {
 
 /** Run one host frame around the game hooks. @return void */
 static void step(void) {
+  PollInputEvents();
   equilizer();
   app_inputs();
   if (WindowShouldClose()) return;
